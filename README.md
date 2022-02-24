@@ -1,4 +1,4 @@
-[![author](https://img.shields.io/badge/author-Luiz_Carlos-blue.svg)](https://www.linkedin.com/in/luiz-carlos-vieira-4582797b/) [![](https://img.shields.io/badge/python-3.8+-yellow.svg)](https://www.python.org/downloads/release/python) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ziul-bio/Analise-exploratoria-dados_COVIDBR/issues) [![Other Projects](https://img.shields.io/badge/Others-Projects-red.svg?style=flat)](https://github.com/ziul-bio?tab=repositories) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-lightgrey.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![author](https://img.shields.io/badge/author-Luiz_Carlos-blue.svg)](https://www.linkedin.com/in/luiz-carlos-vieira-4582797b/) [![](https://img.shields.io/badge/python-3.8+-yellow.svg)](https://www.python.org/downloads/release/python) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ziul-bio/Aprendendo_R/issues) [![Other Projects](https://img.shields.io/badge/Others-Projects-red.svg?style=flat)](https://github.com/ziul-bio?tab=repositories) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-lightgrey.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 <p align="center">
   <img src="banner.png" >
@@ -45,23 +45,23 @@ Atualmente minhas análises requerem bastante manipulação de dados em R, devid
 
 ### Temas abordados
 
-* [Variáveis e Operadores]()
-* [Tipos de dados]()
-* [Condicionais if e else]()
-* [Loop while]()
-* [Loop for]()
-* [Funções]()
-* [Funções built-in]()
-* [Estrutura de dados - Vetores]()
-* [Estrutura de dados - Listas]()
-* [Estrutura de dados - Matrizes]()
-* [Estrutura de dados - Array]()
-* [Estrutura de dados - Data Frame]()
-* [Estrutura de dados - Fatores]()
-* [Manipulação de Arquivos]()
-* [Ploting-Gráficos]()
-* [RColor_Brewer]()
-* [Explorando dados em R]()
+* [Variáveis e Operadores](https://github.com/ziul-bio/Aprendendo_R/blob/main/01-Vari%C3%A1veis-e-Opera%C3%A7%C3%B5es.md)
+* [Tipos de dados](https://github.com/ziul-bio/Aprendendo_R/blob/main/02-Tipos-de-dados.md)
+* [Condicionais if e else](https://github.com/ziul-bio/Aprendendo_R/blob/main/03-Condicionais-If-e-Else.md)
+* [Loop while](https://github.com/ziul-bio/Aprendendo_R/blob/main/04-Loop-While.md)
+* [Loop for](https://github.com/ziul-bio/Aprendendo_R/blob/main/05-Loop-For.md)
+* [Funções](https://github.com/ziul-bio/Aprendendo_R/blob/main/06.1-Fun%C3%A7%C3%B5es.md)
+* [Funções built-in](https://github.com/ziul-bio/Aprendendo_R/blob/main/06.2-Fun%C3%A7%C3%B5es_built-in.md)
+* [Estrutura de dados - Vetores](https://github.com/ziul-bio/Aprendendo_R/blob/main/07.1-Estrutura-de-dados---Vetores.md)
+* [Estrutura de dados - Listas](https://github.com/ziul-bio/Aprendendo_R/blob/main/07.2-Estrutura-de-dados---Listas.md)
+* [Estrutura de dados - Matrizes](https://github.com/ziul-bio/Aprendendo_R/blob/main/07.3-Estrutura-de-dados---Matrizes.md)
+* [Estrutura de dados - Array](https://github.com/ziul-bio/Aprendendo_R/blob/main/07.4-Estrutura-de-dados---Arrays.md)
+* [Estrutura de dados - Data Frame](https://github.com/ziul-bio/Aprendendo_R/blob/main/07.5-Estrutura-de-dados---DataFrame.md)
+* [Estrutura de dados - Fatores](https://github.com/ziul-bio/Aprendendo_R/blob/main/07.6-Estrutura-de-dados---Fatores.md)
+* [Manipulação de Arquivos](https://github.com/ziul-bio/Aprendendo_R/blob/main/08-Manipulando-arquivos.md)
+* [Ploting-Gráficos](https://github.com/ziul-bio/Aprendendo_R/blob/main/09-Ploting_Graphs.md)
+* [RColor_Brewer](https://github.com/ziul-bio/Aprendendo_R/blob/main/10-RColor_Brewer.md)
+* [Explorando dados em R](https://github.com/ziul-bio/Aprendendo_R/blob/main/11-Explorando-dados-em-R.md)
 
 
 ### Referências
