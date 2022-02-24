@@ -64,7 +64,7 @@ Atualmente minhas análises requerem bastante manipulação de dados em R, devid
 
 
 ### Referências
-1 - Buffalo, Vince. Bioinformatics Data Skills. 1ª edição. O'Reilly Media; (23 julho 2015)
-2 - Wickham, Hadley. R for Data Science. 1ª edição. Alta Books; (15 fevereiro 2019). [link](https://r4ds.had.co.nz/index.html)
-3 - Love MI, Huber W, Anders S (2014). “Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.” Genome Biology, 15, 550. doi: 10.1186/s13059-014-0550-8.
+1 - Buffalo, Vince. Bioinformatics Data Skills. 1ª edição. O'Reilly Media; (23 julho 2015)  
+2 - Wickham, Hadley. R for Data Science. 1ª edição. Alta Books; (15 fevereiro 2019). [link](https://r4ds.had.co.nz/index.html)  
+3 - Love MI, Huber W, Anders S (2014). “Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.” Genome Biology, 15, 550. doi: 10.1186/s13059-014-0550-8.  
 
