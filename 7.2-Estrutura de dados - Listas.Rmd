@@ -1,0 +1,202 @@
+---
+title: Tipos de estrutura de dados em R - Listas
+Author: Luiz Carlos Vieira
+date: 22/02/2022
+---
+
+# Introdução
+
+Uma lista em R pode conter vários tipos de dados diferentes dentro dela, ou seja uma lista é uma coleção de dados. 
+
+
+Para criar uma lista, use a função list()
+
+# Lista de strings
+```{r}
+lista1 <- list("Laranja", "Banana", "Morango")
+
+# Print listas1
+lista1
+```
+
+## Acessando itens de uma Listas 
+
+Para acessar os itens da lista, basta indicar o seu número de índice, entre colchetes. 
+
+O primeiro item possui índice 1, o segundo item possui índice 2 e assim por diante:
+```{r}
+lista1[2]
+
+```
+
+
+# Acessar o índice do elemento
+```{r}
+which(lista1=='Banana') 
+
+```
+
+Se a lista tiver mais de uma banana, poderia ser especificado qual se quer.
+```{r}
+# Se tiver mais de uma quero saber o índece da primeira da lista
+which(lista1=='Banana')[1] 
+
+```
+
+
+# Procura multipla
+```{r}
+which(lista1 %in% c('Banana', 'Maracuja'))
+
+```
+
+
+# Outra maneira de acessa os indices da lista é o match
+```{r}
+match('Banana', lista1)
+match(c('Banana', 'apple'), lista1)
+```
+
+
+## Alterando o valores da lista 
+
+Para alterar o valor de um item específico, indique o número do índice:
+```{r}
+lista1[1] <- "Limão"
+
+# Print a lista atualizada
+lista1
+```
+
+
+## Comprimento da Lista
+
+Para descobrir o comprimento da lista use a função length():
+```{r}
+length(lista1)
+
+```
+
+
+#  Verificando se um item existe 
+
+Para descobrir se um item especificado está presente em uma lista, com o operador %in%:
+```{r}
+"apple" %in% lista1
+
+```
+
+
+## Adicionar itens de lista 
+
+Para adicionar um item ao final da lista, use a função append():
+```{r}
+lista1 <- append(lista1, "Melão")
+lista1
+
+```
+
+
+Para adicionar um item à direita de um índice especificado, adicione "after= número do índice" na função append ():
+```{r}
+lista1 <- append(lista1, "Uva", after = 2)
+lista1
+
+```
+
+
+Nesta situação é possível subistituir qualquer elemento da lista
+```{r}
+lista1[6] <- 'Butiá' 
+lista1
+
+```
+
+# Remover itens da lista 
+
+Para remover itens da lista, pode-se cria uma lista nova e atualizada sem um item:
+```{r}
+lista2 <- lista1[-4]
+
+# Print a lista atualizada
+lista2
+```
+
+
+# ou atribuindo o valor null ao item
+```{r}
+lista2[1] <- NULL
+lista2
+
+```
+
+## Range de Índices 
+
+Com o range de índices é possível especificar onde começa e onde termina o range, usando o operador ':'.
+```{r}
+lista1[2:4]
+```
+
+Obs: A pesquisa iniciará no índice 2 (incluso) e terminará no índice 4 (tbm incluso).
+  
+Lembrando que a indexação em R inicia em 1.
+
+
+## Acessando slots dentro de uma lista 
+
+[] é usado para acessar um range de índeces de uma lista ou coluna em um data frame, enquanto o 
+[[]] é limitado a acessar uma única coluna ou slot.
+```{r}
+foo <- list(mat=matrix(0,nrow=2,ncol=2), mat2=matrix(2,nrow=2,ncol=2), list("aaa", "bbb", "vvvv"))
+
+foo[1]
+foo[3]
+
+foo[[1]]
+foo[[3]]
+```
+
+
+## Unindo duas Listas 
+
+Há várias formas de unir(join) ou concatenate duas ou mais listas em R.
+
+A forma mais comum é usar a função c(), da qual combina dois elementos:
+```{r}
+lista3 <- c(lista1,lista2)
+
+lista3
+
+```
+
+# A função str() examina os elementos da lista e retorna o tipo dos dados de cada elemento.
+```{r}
+str(lista3)
+
+```
+
+#  Manipulação de listas 
+
+Aplicando uma função simplificada ---> S=Simplificada Apply= Aplicar
+```{r}
+# sapply(list, function)
+sapply(lista3[4:7], toupper)
+
+```
+
+
+# Loop for sobre uma Lista 
+
+Com o loop for, é possível percorrer os item de uma lista realizando operações sobre cada um:
+```{r}
+for (x in lista4) {
+  print(toupper(x))
+}
+```
+
+
+## Referências:
+
+https://www.w3schools.com/r/default.asp
+https://www.cs.upc.edu/~robert/teaching/estadistica/rprogramming.pdf
+

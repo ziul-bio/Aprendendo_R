@@ -1,0 +1,214 @@
+---
+title: "Introdução a programação em R"
+Author: Luiz Carlos Vieira
+date: 22/02/2022
+---
+
+## Introdução
+
+R é uma linguagem de programação, muito usada em análises estatisticas e representações gráficas nas mais 
+diversas áreas de análise de dados.
+ 
+
+## Por que usar R?
+
+* É um ótimo recurso para análise de dados, visualização de dados, ciência de dados e aprendizado de máquina.
+* Fornece muitas técnicas estatísticas (como testes estatísticos, classificação, agrupamento e redução de dados)
+* Fácil desenhar gráficos em R, como gráficos de pizza, histogramas, gráfico de caixa, gráfico de dispersão, etc.
+* Funciona em diferentes plataformas (Windows, Mac, Linux)
+* É de código aberto e gratuito
+* Tem um grande apoio da comunidade
+* Possui muitos pacotes (bibliotecas de funções) que podem ser usados para resolver diferentes problemas
+
+
+# Atalhos úteis in R
+
+ls()                   -> lista todos os objetos do diretório de trabalho
+ctrl + enter           -> Eexecuta a linha
+Esc                    -> Interrompe a execução de uma linha
+Shift + alt + up/down  -> Copia uma linha abaixo ou acima
+alt + up/down          -> MOve uma linha para abaixo ou para acima
+Ctrl + L               -> Limpa o console
+Ctrl + S               -> Salva o documento atual
+Ctrl + alt + W         -> Fecha o documento atual
+Ctrl + Shift + M       -> (%>%) operador pipe
+Ctrl + Alt + I         -> Cria um chunk no R Markdown
+Ctrl + D               -> Deleta uma linha
+Alt + Shit + K         -> Abre janela com todos os atalhos disponíveis.
+Ctrl + Shift + c       -> Para comentar uma linha ou multiplas linhas.
+
+
+# Variáveis
+
+## Regras para declaração de nomes das Variáveis em R:
+
+* Uma variável pode ter um nome curto (como xe) ou um nome mais descritivo (idade, nome_carro, volume_total). 
+* O nome de uma variável deve começar com uma letra e pode ser uma combinação de letras, dígitos, ponto (.)
+e underline (_). 
+* Se começar com um ponto (.), Não pode ser seguido por um dígito.
+* O nome de uma variável não pode começar com um número ou sublinhado (_)
+* Os nomes das variáveis diferenciam maiúsculas de minúsculas (idade, idade e IDADE são três variáveis diferentes)
+* Palavras reservadas não podem ser usadas como variáveis (TRUE, FALSE, NULL, if ...)
+
+
+## Declarando variáveis: 
+
+```{r}
+var1 = 'hello World'
+var2 <- 'ola'
+var3 <- 2 + 2 
+var4 <- 5 + 5
+var5 <- 'abc'
+.var6<-'variavel Oculta'
+```
+
+
+## Imprimindo as variáveis:
+```{r}
+print(var1)
+print(var2)
+print(var3)
+print(var4)
+print(var5)
+print(.var6)
+```
+
+
+
+## Listando as variáveis declaradas no local de trabalho:
+```{r}
+ls()
+```
+
+# Removendo variáveis declaradas da memória:
+```{r}
+rm(var5)
+```
+
+# Conferindo as variáveis:
+```{r}
+ls()
+```
+
+# procurando por variáveis com um padrão:
+```{r}
+ls(pattern = 'var')
+```
+
+# Listando variáveis ocultas:
+```{r}
+ls(all.names = TRUE)
+```
+
+
+# Concatenando variáveis ou textos:
+```{r}
+paste(var2, "Como estas?")
+
+paste(var1,", How's it going?", ", Good")
+```
+
+
+# Operações matemáticas 
+
+R divide os operadores nos seguintes grupos:
+  
+Operadores lógicos e Operadores diversos
+
+## Operadores aritméticos
+```{r}
+var3 + var4        # adição
+var4 - var3        # subtração
+var3*2             # multiplicação
+var3/2             # divisão
+var3^2             # var3**2 também se refere a potência
+var3%%2            # Resto da divisão
+exp(var3)          # função exponencial = (2.718281828 ^var3)
+```
+
+
+## Operadores de atribuição 
+```{r}
+my_var <- 3
+print(my_var)
+
+my_var <<- 3
+print(my_var)
+
+3 -> my_var
+print(my_var)
+
+3 ->> my_var
+print(my_var)
+
+```
+
+
+## Operadores de comparação
+
+Verificando igualdade entre as operação
+```{r}
+sqrt(9) == 3^1
+```
+
+Verificando diferença entre as operação:
+```{r}
+sqrt(9) != 3^1
+```
+
+maior
+```{r}
+2>3
+```
+
+menor
+```{r}
+3<1
+```
+
+maior igual
+```{r}
+9>=9
+```
+
+menor igual
+```{r}
+10<=5
+```
+
+
+## Operação mais complexas:
+
+Em operações mais complexas onde incluam várias operações é sempre bom explicitar entre parenteses as 
+operações a serem realizadas.
+
+No exemplo abaixo, primeiro será realizado a soma, depois a subtração e por fim a raíz quadrada'
+```{r}
+sqrt(((var4+var4) - var3))
+```
+
+
+
+## Operadores diversos de R
+
+Operadores diversos são usados para manipular dados
+
+Operador	--------------- Descrição ------------------------------------------------------------------
+
+&	  -------> Operador Logico AND. Retorna TRUE se ambos os elementos forem TRUE.
+&&	-------> Compara apenas o primeiro elemento de cada vetor, retornado TRUE se eles forem iguais.
+|	  -------> Operador Logico Not. Retorna TRUE se ambos os elementos forem False.
+||	-------> Compara apenas o primeiro elemento de cada vetor, retornado TRUE se eles forem diferentes.
+!	  -------> Logico NOT - retorna FALSE se o statment é TRUE
+:	  -------> Cria uma serie de númeors em sequencia. ( Exemplo: x <- 1:10)
+%in% ------> Procura por elementos de um vetor em outro. ( Exemplo: x %in% y)
+%*%	 ------> Multiplicação de Matriz
+
+
+## Referências:
+
+https://www.w3schools.com/r/default.asp
+https://www.cs.upc.edu/~robert/teaching/estadistica/rprogramming.pdf
+
+  
+  

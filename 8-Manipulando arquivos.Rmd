@@ -1,0 +1,190 @@
+---
+title: Manipulando arquivos em R em R
+Author: Luiz Carlos Vieira
+date: 22/02/2022
+---
+
+# Introdução
+
+# Escolhendo os arquivos 
+
+A funções read de R oferece vários métodos para leitura de arquivos no formato csv, table, delim etc.
+
+Para que a leitura do arquivo seja feita, é preciso que o arquivo esteja na diretório atual de trabalho,
+ou ao menos que este seja especificdo.
+
+# Descobrindo o diretório onde se estar trabalhando
+```{r}
+getwd()
+
+```
+
+
+# Especificando o diretório de trabalho:
+
+Isso evitará erros como: "file not found or not present in pwd"
+```{r}
+setwd("C:/Users/luiz_/Google Drive/R/Aprendendo R/arquivos")
+```
+
+Ou vá em: Session --> Set Working Directoty --> To Source File Location
+
+
+# Lendo arquivos em R
+
+Um dos formatos importantes para armazenar um arquivo é em um arquivo de texto. 
+
+R fornece vários métodos que podem ser lidos em um arquivo de texto.
+
+
+## read.delim() 
+
+Este método é usado para ler arquivos de "valores separados por tabulação" (".txt"). 
+
+Por padrão, o ponto (".") é usado como casas decimais.
+
+Sintax:
+```{r}
+read.delim("arquivo", header = T, sep = "\t", dec = ".")
+```
+
+* arquivo = o caminho para o arquivo que contém os dados a serem lidos em R.
+* header =  um valor lógico. Se TRUE, read.delim() assume que seu arquivo tem uma linha de cabeçalho, ou seja,
+a linha 1 é o nome de cada coluna. Se não for esse o caso, altere o argumento header = FALSE.
+* sep: o caracterer separador de campo. "\T" é usado para um arquivo delimitado por tabulação.
+* dec: o caracterer usado no arquivo para casas decimais.
+
+Exemplo
+```{r}
+file <- read.delim("C:/Users/luiz_/GoogleDrive/Rna-Seq/2-DESeq2/Analysis_DESeq2_Annotation_CHO/coldata.txt",
+                   header = T, sep = "\t")
+file
+```
+
+
+## file.choose() 
+
+Em R também é possível escolher um arquivo interativamente usando a função .
+```{r}
+# Com esta função, uma nova aba se abrirá, onde o arquivo deve ser escolhido
+myFile = read.table(file.choose(), header = T, sep = '\t', row.names=1)
+
+
+myFile
+```
+
+
+## read_tsv() 
+
+Este método também é usado para ler valores separados por tabulação ("\t") usando a ajuda do pacote readr.
+
+## Importando a bibioteca readr
+```{r}
+library(readr)
+
+myData = read_tsv("C:/Users/luiz_/GoogleDrive/Rna-Seq/2-DESeq2/Analysis_DESeq2_Annotation_CHO/coldata.txt",
+                  col_names = T)
+print(myData)
+
+```
+col_names: TRUE, FALSE ou um vetor de caracteres especificando os nomes das colunas. 
+Se TRUE, a primeira linha da entrada será usada como os nomes das colunas.
+
+
+## acionar ajuda do R
+```{r}
+?read_tsv
+```
+
+
+
+## read.table() 
+
+read.table () é uma função geral que pode ser usada para ler um arquivo em formato de tabela. Os dados serão
+importados como um quadro de dados.
+
+# Usando read.table()
+```{r}
+myData2 = read.table("C:/Users/luiz_/GoogleDrive/Rna-Seq/2-DESeq2/Analysis_DESeq2_Annotation_CHO/coldata.txt",
+                     sep="", header=TRUE, dec = '.')
+print(myData2)
+
+```
+
+
+# Lendo arquivos da web
+```{r}
+df <- read.table("https://s3.amazonaws.com/assets.datacamp.com/blog_assets/test.txt", header = FALSE)
+df
+```
+
+
+
+## read.csv ()
+
+read.csv() é usado para ler arquivos de "valores separados por vírgula" (".csv"). Neste também os dados serão 
+importados como um dataFrame.
+```{r}
+csv = read.csv("four_cylinders.csv", header = T, sep = ',') 
+
+print(csv)
+```
+
+
+## read.csv2() 
+
+é usado usado em países que usam uma vírgula "," como ponto decimal e um ponto e vírgula ";" como separadores
+de campo.
+```{r}
+csv2 = read.csv2("four_cylinders.csv", header = T, sep = ',') 
+
+print(csv2)
+```
+
+
+# Lendo EXCEL com xlsx package
+
+O pacote fornece funções R para ler, gravar e formatar arquivos do Excel. Depende do Java, mas isso o torna
+disponível na maioria dos sistemas operacionais.
+
+Sintax:
+read.xlsx(file, sheetIndex, header=TRUE, colClasses=NA)
+
+# documentos Excel em R.
+```{r}
+library(xlsx)
+
+# o número um, representa a primeira aba do arquivo execel
+excel = read.xlsx(file="C:/Users/luiz_/GoogleDrive/Rna-Seq/2-DESeq2/Analysis_DESeq2_Annotation_CHO/results_DESeq2_genes_up.xlsx", 1)
+
+excel
+
+```
+
+## Salvando arquivos em excel
+```{r}
+write.xlsx(x, file="path/nome.xlsx", sheetName="Sheet1", 
+  col.names=TRUE, row.names=TRUE, append=FALSE)
+```
+
+Descrição:
+
+x: um data.frame a ser escrito na pasta de trabalho.
+file: o caminho para o arquivo de saída.
+sheetName: uma cadeia de caracteres a ser usada para o nome da planilha.
+col.names: um valor lógico que especifica se os nomes das colunas de x devem ser gravados no arquivo.
+row.names: um valor lógico que especifica se os nomes das linhas de x devem ser gravados no arquivo.
+append : um valor lógico que indica se x deve ser anexado a um arquivo existente.
+
+
+Note: write.xlsx2 obtém melhor desempenho em comparação com write.xlsx para data.frame muito grande 
+(com mais de 100.000 células).
+
+
+## Referências:
+
+https://www.w3schools.com/r/default.asp
+https://www.cs.upc.edu/~robert/teaching/estadistica/rprogramming.pdf
+https://github.com/colearendt/xlsx
+http://www.sthda.com/english/wiki/r-xlsx-package-a-quick-start-guide-to-manipulate-excel-files-in-r
+

@@ -1,0 +1,94 @@
+---
+title: Tipos de estrutura de dados em R - Fatores
+Author: Luiz Carlos Vieira
+date: 22/02/2022
+---
+
+# Introdução
+
+Fatores são usados para categorizar dados. Exemplos de fatores são:
+
+Demografia: Masculino / Feminino
+Condição: controle / tratado
+
+Para criar um fator, use a função factor() e adicione um vetor como argumento:
+  
+# Criando um fator
+```{r}
+experimento <- factor(c("controle", "tratado"))
+experimento
+
+```
+
+Checando os fatores
+```{r}
+str(experimento)
+
+```
+No exemplo acima o fator tem 2 níveis (experimento): controle e tratado.
+
+
+Para imprimir apenas os níveis use a função levels():
+```{r}
+levels(experimento)
+
+```
+  
+
+É possível ajustar os níveis, adicionando o argumento levels dentro da função factor()
+```{r}
+genero <- factor(c("Jazz", "Rock", "Classic", "Pop", "reggae", "funk", "folk"),
+                 levels = c("Jazz", "Pop", "Rock", "Others"))
+
+levels(genero)
+
+```
+  
+
+# Comprimento do fator
+```{r}
+length(genero)
+
+```
+
+
+# Acessando Factors
+```{r}
+genero[3]
+
+```
+
+# Modificando os valores dos itens
+```{r}
+genero[3] <- "others"
+genero[3]
+
+```
+
+
+Obs: Não é possível modificar um valor que ainda não tenho sido especificado no fator.
+
+O exemplo abaixo produz um erro:
+```{r}
+genero[3] <- "Dance"
+genero[3]
+```
+
+
+Porém se ele tiver sido especificado dentro dos níveis, ele pode ser modificado
+```{r}
+genero <- factor(c("Jazz", "Rock", "Classic", "Pop", "reggae", "funk", "folk"),
+                 levels = c("Jazz", "Pop", "Rock", "Dance", "Others"))
+
+genero[3] <- "Dance"
+genero[3]
+
+```
+
+
+
+## Referências:
+
+https://www.w3schools.com/r/default.asp
+https://www.cs.upc.edu/~robert/teaching/estadistica/rprogramming.pdf
+

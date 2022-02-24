@@ -1,0 +1,131 @@
+---
+title: Funções em R
+Author: Luiz Carlos Vieira
+date: 22/02/2022
+---
+
+# Introdução
+
+Uma função é um bloco de código que é executado quando chamado.
+
+É possível passar dados conhecidos como parâmetros para uma função, ou dados gerados por outra função.
+
+Uma função pode retornar dados como resultado.
+
+
+## Criando de uma função 
+
+Para criar uma funçãoo, use a palavra-chave function()
+```{r}
+minha_funcao <- function() { # cria uma função com o nome de minha_funcao
+  print("Hello World!")
+}
+```
+
+
+## Chamando a função
+```{r}
+minha_funcao()
+
+```
+
+
+## Argumentos
+
+Informações podem ser passadas para funções como argumentos.
+
+Os argumentos são especificados após o nome da função, entre parênteses. 
+Pode ser adicionado quantos argumentos necessário, apenas separe-os com uma vírgula.
+
+O exemplo a seguir tem uma função com um argumento (fname). 
+
+Passamos um nome para a função, que cria um ID e concatena com o nome.
+```{r}
+func_id <- function(fname) {
+  paste(fname, "ID:",sample(1000:9999, 1))
+}
+
+func_id("Luiz")
+func_id("Carlos")
+
+```
+
+
+
+# Parâmetros ou argumentos? 
+
+Os termos "parâmetro" e "argumento" podem ser usados com o mesmo propósito: que é passar informações ou dados
+para uma função.
+   
+Um parâmetro é a variável listada entre parânteses na definição da função.
+
+Um argumento é o valor enviado para a função quando ela é chamada.
+
+
+##   Número de Argumentos
+
+Por padrão, uma função deve ser chamada com o número correto de argumentos. 
+
+Ou seja, se a função foi criada com 2 parâmetros, quando está for chamada, 2 argumentos deverão ser passados.
+```{r}
+func_name <- function(fname, lname) {
+  paste(fname, lname)
+}
+
+func_name("Luiz", "Vieira")
+
+```
+
+
+Se a função for chamada com 1 ou 3 argumentos, receberá um erro:
+
+
+## Valor do parâmetro padrão
+
+O exemplo a seguir mostra como usar um valor de parâmetro padrão.
+Se chamarmos a função sem um argumento, ela usará o valor padrão:
+```{r}
+func <- function(country = "Brasil") {
+  paste("Eu nasci no", country)
+}
+
+# Retorna o valor padrão, Brazil
+func() 
+
+func("Canada")
+func("México")
+func("USA")
+```
+
+
+
+## Retornando Valores
+
+Para permitir que uma função retorne um resultado, use a função return():
+```{r}
+func2 <- function(x) {
+  return (5 * x)
+}
+
+print(func2(3))
+print(func2(5))
+print(func2(9))
+
+```
+
+
+## Uma função dentro de outra função
+```{r}
+func3 <- function(x, y) {
+  return (y * x)
+}
+
+func3(func2(9), func2(10))
+
+```
+
+
+## Referências:
+
+https://www.w3schools.com/r/default.asp
+https://www.cs.upc.edu/~robert/teaching/estadistica/rprogramming.pdf

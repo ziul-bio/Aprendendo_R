@@ -1,0 +1,106 @@
+---
+title: Tipos de estrutura de dados em R - Arrays
+Author: Luiz Carlos Vieira
+date: 22/02/2022
+---
+
+# Introdução
+
+Em comparação com matrizes, os arrays podem ter mais de duas dimensões. 
+
+A função array () cria uma matriz e o parâmetro dim especifica as dimensões.
+
+Criando um array com uma dimensão(igual a um vetor) com valores num range de 1 : 24.
+```{r}
+array <- c(1:24)
+array
+```
+
+
+# Array com mais de uma dimensão
+```{r}
+# usei os dados do array, para criar o multiarray 2 dimensões, com 4 linhas e 3 colunas cada.
+multiarray <- array(array, dim = c(4, 3, 2))
+multiarray
+```
+
+# Como funciona o dim=c(4,3,2)?
+
+O primeiro número especifica a quantidade linhas e o segundo as colunas. E o último o número de dimensões.
+Obs: Arrays aceitam apenas um único tipo de dado.'
+
+
+# Acessando os item de um array  
+
+Os item de um array podem ser acessados pelo seu índice entre os colchetes [].
+
+sintax: array[posição da linha, posição da coluna, nível da matriz]
+```{r}
+multiarray[1,2,1] # linha 1, coluna 2, dimensão 1
+
+```
+
+# Usando a dunção c() para acessar os itens de um array 
+```{r}
+multiarray[c(1, 2),,2] # linhas 1 e 2, todas as colunas, dimensão 2
+
+```
+
+
+# Acessando todas as colunas da primeira linha na dimensão 1
+```{r}
+multiarray[c(1),,1]
+
+```
+
+
+
+# Acessando todas as linhas da coluna 1 da dimensão 2 
+```{r}
+multiarray[,c(1),2]
+
+```
+
+
+O uso da vígula sem especificar um número de linha, coluna ou dimensão, significa que se quer acessar todas.
+```{r}
+multiarray[,,] # Veja que não especifiquei nada e o output foi as duas matrizes do array.
+
+```
+
+
+
+# Verificando a presença de itens no array
+```{r}
+2 %in% multiarray
+
+```
+
+
+# Verificando a quantidade de linhas e colunas do array
+```{r}
+dim(multiarray)
+
+```
+
+# Comprimento do array
+```{r}
+length(multiarray)
+
+```
+
+
+#  Loop sobre o  Array  
+```{r}
+for(x in multiarray){
+  print(x*100)
+}
+
+```
+
+
+## Referências:
+
+https://www.w3schools.com/r/default.asp
+https://www.cs.upc.edu/~robert/teaching/estadistica/rprogramming.pdf
+
