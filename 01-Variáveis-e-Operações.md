@@ -23,16 +23,19 @@ representações gráficas nas mais diversas áreas de análise de dados.
 
 # Atalhos úteis in R
 
-ls() -&gt; lista todos os objetos do diretório de trabalho ctrl + enter
--&gt; Eexecuta a linha Esc -&gt; Interrompe a execução de uma linha
-Shift + alt + up/down -&gt; Copia uma linha abaixo ou acima alt +
-up/down -&gt; MOve uma linha para abaixo ou para acima Ctrl + L -&gt;
-Limpa o console Ctrl + S -&gt; Salva o documento atual Ctrl + alt + W
--&gt; Fecha o documento atual Ctrl + Shift + M -&gt; (%&gt;%) operador
-pipe Ctrl + Alt + I -&gt; Cria um chunk no R Markdown Ctrl + D -&gt;
-Deleta uma linha Alt + Shit + K -&gt; Abre janela com todos os atalhos
-disponíveis. Ctrl + Shift + c -&gt; Para comentar uma linha ou multiplas
-linhas.
+ls() -&gt; lista todos os objetos do diretório de trabalho  
+ctrl + enter -&gt; Eexecuta a linha  
+Esc -&gt; Interrompe a execução de uma linha  
+Shift + alt + up/down -&gt; Copia uma linha abaixo ou acima  
+alt + up/down -&gt; MOve uma linha para abaixo ou para acima  
+Ctrl + L -&gt; Limpa o console  
+Ctrl + S -&gt; Salva o documento atual  
+Ctrl + alt + W -&gt; Fecha o documento atual  
+Ctrl + Shift + M -&gt; (%&gt;%) operador pipe  
+Ctrl + Alt + I -&gt; Cria um chunk no R Markdown  
+Ctrl + D -&gt; Deleta uma linha  
+Alt + Shit + K -&gt; Abre janela com todos os atalhos disponíveis.  
+Ctrl + Shift + c -&gt; Para comentar uma linha ou multiplas linhas.
 
 # Variáveis
 

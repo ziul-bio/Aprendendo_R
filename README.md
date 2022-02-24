@@ -23,7 +23,6 @@ Atualmente, desenvolve análise de dados biológicos dentre outras análises que
 # Sobre este Projeto:
 
 ## Aprendendo R.
-### Dataset covid19 no Brasil 
 
 
 ### Introdução
